@@ -64,14 +64,15 @@ a {
       }
     }
   }
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+  }
 }
 
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-}
+
 
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
