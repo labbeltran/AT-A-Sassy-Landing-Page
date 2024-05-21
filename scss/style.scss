@@ -1,3 +1,6 @@
+@import '_btnConfig';
+@import 'config';
+@import 'utilities';
 
 * {
   box-sizing: border-box;
@@ -6,8 +9,9 @@
 }
 
 body {
-  background-color: $light-color;
+  background-color: $primary-color;
   font-family: $font-stack;
+  font-weight: map-get($font-weights, bold);
   line-height: 1;
 }
 
@@ -20,15 +24,55 @@ a {
 }
 
 .hero {
-  // This is where the bulk of the SCSS styling needs to be done
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-  // Take a look at the other files we've built already. How can they be useful here?
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    
+    h1.banner {
+      margin: 0;
+      font-size: 1.5rem;
+      color: $light-color;
+    }
 
-  // Also, take time to review the features of SCSS we've already covered:
-  // 1. $variables
-  // 2. nesting (dont forget about the ampersand (&) parent selector!)
-  // 3. At-Rules
+    ul {
+      list-style-type: none; 
+      padding: 0;            
+      margin: 0;             
+      display: flex;         
+
+      li {
+        font-weight: map-get($font-weights, medium);
+        margin-right: 20px; 
+      }
+
+      a {
+        color: inherit; 
+        
+        &:hover {
+          color: $secondary-color; 
+        }
+      }
+    }
+  }
 }
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
 // While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
@@ -48,4 +92,23 @@ $spaceamounts: (1,2,3,4,5);
   .py-#{$space} {
     padding: #{$space}rem 0;
   }
+}
+
+// buttons
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $light-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  color: $light-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
 }

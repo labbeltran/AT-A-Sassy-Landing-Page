@@ -1,4 +1,4 @@
-  // SCSS Function that will make sure text is light on dark backgrounds, and dark on light backgrounds.
+ // SCSS Function that will make sure text is light on dark backgrounds, and dark on light backgrounds.
   @function text-color-picker($color) {
     @if(lightness($color) > 70) {
       @return black;
